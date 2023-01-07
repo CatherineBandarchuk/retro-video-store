@@ -7,7 +7,8 @@ class Customer(db.Model):
     postal_code = db.Column(db.String, nullable = False)
     phone = db.Column(db.String, nullable = False)
     videos_checked_out_count = db.Column(db.Integer)
-    #videos = db.relationship("Rental", back_populates="customer")
+    
+    videos = db.relationship("Rental")
 
     def to_dict(self):
         customer_as_dict = {}
